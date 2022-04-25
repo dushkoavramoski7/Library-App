@@ -26,23 +26,23 @@ public class InitialDataInsert {
     public void initData()
     {
 
-        this.countryService.save("Country0", "Continent0");
-        this.countryService.save("Country1", "Continent1");
-        this.countryService.save("Country2", "Continent2");
+        this.countryService.save("United Kingdom", "Europe");
+        this.countryService.save("United States", "North America");
+        this.countryService.save("France", "Europe");
 
 
 
-        this.authorService.save("Author0",  "AuthorSurname0", this.countryService.findAll().get(0).getId() ); // book0
-        this.authorService.save("Author1",  "AuthorSurname1", this.countryService.findAll().get(1).getId() ); // book0
-        this.authorService.save("Author2",  "AuthorSurname2", this.countryService.findAll().get(1).getId() ); // book1
-        this.authorService.save("Author3",  "AuthorSurname3", this.countryService.findAll().get(2).getId() ); // book1 & book2
-        this.authorService.save("Author4",  "AuthorSurname4", this.countryService.findAll().get(2).getId() ); // book3 & book2
+        this.authorService.save("Emily",  "Brontë", this.countryService.findAll().get(0).getId() ); // book0
+        this.authorService.save("Herman",  "Melville", this.countryService.findAll().get(1).getId() ); // book0
+        this.authorService.save("F. Scott",  "Fitzgerald", this.countryService.findAll().get(2).getId() ); // book1
+        this.authorService.save("Daniel",  "Defoe", this.countryService.findAll().get(2).getId() ); // book1 & book2
+        this.authorService.save("May",  "Alcott", this.countryService.findAll().get(2).getId() ); // book3 & book2
 
 
-        this.bookService.save("Book0", Book_Category.BIOGRAPHY, 3, this.authorService.findAll().get(0).getId());// author0 & author1
-        this.bookService.save("Book1", Book_Category.CLASSICS, 7, this.authorService.findAll().get(1).getId()); // author2 & author3
-        this.bookService.save("Book2", Book_Category.DRAMA, 1, this.authorService.findAll().get(2).getId());// author4 & author3
-        this.bookService.save("Book3", Book_Category.FANTASY, 6, this.authorService.findAll().get(2).getId());// author4
+        this.bookService.save("Wuthering Heights", Book_Category.BIOGRAPHY, 3, this.authorService.findAll().get(0).getId());// author0 & author1
+        this.bookService.save("Moby Dick", Book_Category.FANTASY, 7, this.authorService.findAll().get(1).getId()); // author2 & author3
+        this.bookService.save("The Great Gatsby", Book_Category.DRAMA, 1, this.authorService.findAll().get(2).getId());// author4 & author3
+        this.bookService.save("Frankenstein", Book_Category.FANTASY, 6, this.authorService.findAll().get(1).getId());// author4
 
 //        this.bookService.update(this.bookService.findAll().get(0).getId(),"Book0", Book_Category.BIOGRAPHY, 3 ,List.of(this.authorService.findAll().get(0),this.authorService.findAll().get(1) ));
 //        this.bookService.update(this.bookService.findAll().get(1).getId(),"Book1", Book_Category.CLASSICS, 7 ,List.of(this.authorService.findAll().get(2),this.authorService.findAll().get(3) ));
