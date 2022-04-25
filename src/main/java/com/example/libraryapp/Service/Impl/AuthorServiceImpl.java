@@ -25,7 +25,7 @@ public class AuthorServiceImpl implements AuthorService {
 
     @Override
     public Optional<Author> save(String name, String surname, Long countryId) {
-        Country country = this.countryRepository.findById(countryId).orElseThrow(() -> new NoSuchElementException());
+        Country country = this.countryRepository.findById(countryId).orElseThrow(NoSuchElementException::new);
         return Optional.of(this.authorRepository.save(new Author(name, surname, country)));
     }
 
